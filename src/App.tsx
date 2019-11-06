@@ -1,19 +1,23 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import Heading from "./Components/heading";
 
 class App extends Component {
 
-    private label(name: string) {
-        return `Hello ${name.toUpperCase()}`;
+    public handleClick(name: string): void {
+        return alert(name);
     }
 
-  render() {
-    return (
-        <div>
-          <h1>{ this.label('React') }</h1>
-          <p>Nice TDD</p>
-        </div>
-    );
-  }
+    render() {
+        return (
+            <div>
+                <Heading name="react"/>
+                <button onClick={ () => this.handleClick('Hello World') }>
+                    Click me
+                </button>
+                <p>Nice TDD</p>
+            </div>
+        );
+    }
 }
 
 export default App;

@@ -1,19 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
 import {shallow} from "enzyme";
+import Heading from "./Components/heading";
 
-it('generates a label', () => {
-   const a = new App({});
-   expect(a.label('React')).toBe('Hello REACT');
-});
-
-it('renders the heading', () => {
+xit('renders the heading', () => {
    const wrapper = shallow(<App />);
-   expect(wrapper.find('h1').text()).toBe('Hello REACT');
+    expect(wrapper.equals(<Heading/>));
 });
 
 it('renders the paragraph', () => {
     const wrapper = shallow(<App />);
     expect(wrapper.find('p').text()).toBe('Nice TDD');
+});
+
+it('renders the button', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.find('button').text()).toBe('Click me');
 });
