@@ -16,3 +16,8 @@ it('renders the heading', () => {
    const wrapper = shallow(<App />);
    expect(wrapper.find('h1').text()).toBe('Hello React');
 });
+
+it('renders the paragraph', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.find('p').text()).toBe('Nice TDD');
+});
