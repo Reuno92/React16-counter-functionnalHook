@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 
 class App extends Component {
+
+    private label(name: string) {
+        return `Hello ${name.toUpperCase()}`;
+    }
+
   render() {
     return (
         <div>
-          <h1>Hello React</h1>
+          <h1>{ this.label('React') }</h1>
           <p>Nice TDD</p>
         </div>
     );
