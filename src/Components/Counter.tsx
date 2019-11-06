@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
 import {CounterModel} from "../models/counter.model";
+import {CounterStateModel} from "../models/CounterState.model";
 
-class Counter extends Component<CounterModel> {
+class Counter extends Component<CounterModel, CounterStateModel> {
     static defaultProps = { label: 'Current' };
+
+    constructor(props: CounterModel) {
+        super(props);
+        this.state = {
+            count: 0
+        }
+    }
 
     render() {
         return (
             <div className="counter">
                 <label>{ this.props.label }</label>
-                <span>1</span>
+                <span>{ this.state.count }</span>
             </div>
         )
     }
