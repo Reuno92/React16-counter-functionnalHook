@@ -1,7 +1,7 @@
 import React from 'react';
 import App from './App';
 import {shallow} from "enzyme";
-import Heading from "./Components/heading";
+import Heading from "./Components/Heading";
 
 xit('renders the heading', () => {
    const wrapper = shallow(<App />);
