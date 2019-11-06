@@ -1,11 +1,13 @@
 import React from 'react';
 import App from './App';
-import {shallow} from "enzyme";
-import Heading from "./Components/Heading";
+import {mount, shallow} from "enzyme";
 
-xit('renders the heading', () => {
-   const wrapper = shallow(<App />);
-    expect(wrapper.equals(<Heading/>));
+it('renders the app and the heading', () => {
+   const wrapper = mount(<App />);
+   expect(wrapper.find('h1').text())
+       .toBe('Hello REACT');
+   expect(wrapper.find('.counter label').text())
+       .toBe('Current')
 });
 
 it('renders the paragraph', () => {

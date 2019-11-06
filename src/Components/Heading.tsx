@@ -1,7 +1,7 @@
 import React, {FC} from "react";
-import {Heading} from "../models/heading";
+import {HeadingModel} from "../models/heading.model";
 
-const HeadingComponent: FC<Heading> = (props: any) => {
+const Heading: FC<HeadingModel> = (props: any) => {
 
     function label(props: any): string {
         const OUTPUT = props.name.toUpperCase();
@@ -11,4 +11,4 @@ const HeadingComponent: FC<Heading> = (props: any) => {
     return (<h1>{ label(props) }</h1>)
 };
 
-export default HeadingComponent;
+export default Heading;

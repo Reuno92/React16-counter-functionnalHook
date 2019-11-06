@@ -1,4 +1,4 @@
-export class Heading {
+export class HeadingModel {
 
     constructor(
         public name: string
