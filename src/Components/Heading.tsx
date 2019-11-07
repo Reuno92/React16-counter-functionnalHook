@@ -1,6 +1,6 @@
 import React from "react";
 
-function Heading(props: any) {
+function Heading(props: any): any {
     return (<h1>Hello { props.name.toUpperCase() }</h1>);
 }
 

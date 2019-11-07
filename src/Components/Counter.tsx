@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function Counter(props: any) {
+function Counter(props: any): any {
     const [count, setCount] = useState(0);
 
     const onCounterIncrease = (event: React.MouseEvent<HTMLElement>) => {

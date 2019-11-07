@@ -1,27 +1,27 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Heading from "./Components/Heading";
 import Counter from "./Components/Counter";
 
-class App extends Component {
+function App(): any {
 
-    public handleClick(name: string): void {
-        return alert(name);
-    }
+    const buttonName = 'Click me';
+    const instructions = `Click on counter label for increase counter by one and Shift + Click for increase counter by ten`;
 
-    render() {
-        return (
-            <div>
-                <Heading name="react"/>
-                <button onClick={
-                    () => this.handleClick('Hello World')
-                }>
-                    Click me
-                </button>
-                <Counter label={'Current'}/>
-                <p>Nice TDD</p>
-            </div>
-        );
-    }
+    return (
+        <div>
+            <Heading name="react"/>
+            <button onClick={
+                () => handleClick(instructions)}>
+                { buttonName }
+            </button>
+            <Counter label="Current" />
+            <p>Nice TDD</p>
+        </div>
+    )
+}
+
+function handleClick(text: string): void {
+    alert(text);
 }
 
 export default App;
