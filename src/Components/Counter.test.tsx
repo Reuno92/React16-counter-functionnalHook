@@ -4,18 +4,26 @@ import React from "react";
 
 
 
-const wrapper = shallow(<Counter label={'Current'} />);
+const initialWrapper = shallow(<Counter label={'Current'} />);
+
 it('should render a counter', () => {
-   expect(wrapper.find('.counter label').text())
+   expect(initialWrapper.find('.counter label').text())
        .toBe('Current');
 });
 
 it('should default start at zero', () => {
-   expect(wrapper.find('.counter span').text()).toBe("0");
+   expect(initialWrapper.find('.counter span').text()).toBe("0");
 });
 
 it('should increment the count by one', () => {
-   expect(wrapper.find('.counter span').text()).toBe('0');
-   wrapper.find('.counter').simulate('click');
-   expect(wrapper.find('.counter span').text()).toBe('1');
+   expect(initialWrapper.find('.counter span').text()).toBe('0');
+    initialWrapper.find('.counter').simulate('click', { shiftKey: false });
+   expect(initialWrapper.find('.counter span').text()).toBe('1');
+});
+
+it('should increment the count by ten', () => {
+    const wrapper = shallow(<Counter />);
+    expect(wrapper.find('.counter span').text()).toBe('0');
+    wrapper.find('.counter').simulate('click', { shiftKey: true });
+    expect(wrapper.find('.counter span').text()).toBe('10');
 });

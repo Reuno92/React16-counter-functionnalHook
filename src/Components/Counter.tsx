@@ -13,7 +13,10 @@ class Counter extends Component<CounterModel, CounterStateModel> {
         }
     }
 
-    public handleClick = (event: React.MouseEvent<HTMLElement>) => this.setState({ count: this.state.count + 1 });
+    public handleClick = (event: React.MouseEvent<HTMLElement>) => {
+        const inc = event.shiftKey ? 10 : 1;
+        this.setState({count: this.state.count + inc });
+    };
 
     render() {
         return (
