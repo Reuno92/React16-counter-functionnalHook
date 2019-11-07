@@ -1,14 +1,7 @@
-import React, {FC} from "react";
-import {HeadingModel} from "../models/heading.model";
+import React from "react";
 
-const Heading: FC<HeadingModel> = (props: any) => {
-
-    function label(props: any): string {
-        const OUTPUT = props.name.toUpperCase();
-        return `Hello ${OUTPUT}`;
-    }
-
-    return (<h1>{ label(props) }</h1>)
-};
+function Heading(props: any) {
+    return (<h1>Hello { props.name.toUpperCase() }</h1>);
+}
 
 export default Heading;
