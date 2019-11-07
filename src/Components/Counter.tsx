@@ -6,19 +6,19 @@ function Counter(props: any): any {
     const onCounterAction = (event: React.MouseEvent<HTMLElement>) => {
         if (event.shiftKey && event.altKey) {
             setCount(count - 10);
-        } else if (event.shiftKey) {
-            setCount(count + 10);
         } else if (event.altKey) {
             setCount(count - 1);
+        } else if (event.shiftKey) {
+            setCount(count + 10);
         } else {
             setCount(count + 1);
         }
     };
 
     return (
-        <div className="counter"
+        <div className="counter mt-3"
              onClick={ onCounterAction }>
-            <label className="pr-2">{props.label}</label>
+            <label className="pr-2 text-white">{props.label}</label>
             <span>{count}</span>
         </div>
     )

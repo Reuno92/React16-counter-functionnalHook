@@ -10,14 +10,12 @@ it('renders the app and the heading', () => {
        .toBe('Current');
    expect(wrapper.find('.counter span').text())
        .toBe('0');
+    expect(wrapper.find('.btn.btn-primary').text())
+        .toBe('Click me');
 });
 
 it('renders the paragraph', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.find('p').text()).toBe('Nice TDD');
-});
-
-it('renders the button', () => {
-    const wrapper = shallow(<App />);
-    expect(wrapper.find('button').text()).toBe('Click me');
+    expect(wrapper.find('p').text())
+        .toBe('Nice TDD');
 });
