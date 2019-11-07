@@ -1,6 +1,7 @@
 import React from 'react';
 import Heading from "./Components/Heading";
 import Counter from "./Components/Counter";
+import "./bootstrap.min.css"
 
 function App(): any {
 
