@@ -7,7 +7,9 @@ it('renders the app and the heading', () => {
    expect(wrapper.find('h1').text())
        .toBe('Hello REACT');
    expect(wrapper.find('.counter label').text())
-       .toBe('Current')
+       .toBe('Current');
+   expect(wrapper.find('.counter span').text())
+       .toBe('0');
 });
 
 it('renders the paragraph', () => {
