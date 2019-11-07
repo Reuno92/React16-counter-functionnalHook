@@ -27,3 +27,17 @@ it('should increment the count by ten', () => {
     wrapper.find('.counter').simulate('click', { shiftKey: true });
     expect(wrapper.find('.counter span').text()).toBe('10');
 });
+
+it('should decrement the count by one', () => {
+    const wrapper = shallow(<Counter />);
+    expect(wrapper.find('.counter span').text()).toBe('0');
+    wrapper.find('.counter').simulate('click', { altKey: true });
+    expect(wrapper.find('.counter span').text()).toBe('-1');
+});
+
+it('should decrement the count by one', () => {
+    const wrapper = shallow(<Counter />);
+    expect(wrapper.find('.counter span').text()).toBe('0');
+    wrapper.find('.counter').simulate('click', { altKey: true, shiftKey: true });
+    expect(wrapper.find('.counter span').text()).toBe('-10');
+});

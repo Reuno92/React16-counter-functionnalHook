@@ -9,10 +9,12 @@ function App(): any {
     const instructions = `Click on counter label for increase counter by one and Shift + Click for increase counter by ten`;
 
     return (
-        <div>
+        <div className="container">
             <Heading name="react"/>
             <button onClick={
-                () => handleClick(instructions)}>
+                () => handleClick(instructions)
+                }
+                className="btn btn-primary">
                 { buttonName }
             </button>
             <Counter label="Current" />
